@@ -7,6 +7,7 @@ import { theme } from "./src/infrastructure/theme/index";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Container } from "./src/components/utils/safe-area.component";
+import { RestaurantsContextProvider } from "./src/services/Restaurents/mock/restaurants.context";
 
 import { Ionicons } from "@expo/vector-icons";
 
@@ -49,10 +50,7 @@ export default function App() {
     );
   };
 
-  const TAB_ICON = (focused) => (
-    
-    
-    {
+  const TAB_ICON = (focused) => ({
     Restaurents: focused ? "md-restaurant" : "md-restaurant-outline",
     Map: focused ? "map" : "map-outline",
     Settings: focused ? "settings" : "settings-outline",
@@ -60,31 +58,33 @@ export default function App() {
 
   return (
     <>
-      <NavigationContainer>
-        <ThemeProvider theme={theme}>
-          <Tab.Navigator
-            screenOptions={({ route }) => ({
-              tabBarIcon: ({ focused, color, size }) => {
-                let iconName;
-                iconName = TAB_ICON(focused)[route.name];
-                //component to return
-                return <Ionicons name={iconName} size={size} color={color} />;
-              },
-            })}
-            tabBarOptions={{
-              activeTintColor: "tomato",
-              inactiveTintColor: "black",
-            }}
-          >
-            <Tab.Screen
-              name="Restaurents"
-              component={RestaurentsScreen}
-            ></Tab.Screen>
-            <Tab.Screen name="Map" component={Map}></Tab.Screen>
-            <Tab.Screen name="Settings" component={Settings}></Tab.Screen>
-          </Tab.Navigator>
-        </ThemeProvider>
-      </NavigationContainer>
+      <ThemeProvider theme={theme}>
+        <RestaurantsContextProvider>
+          <NavigationContainer>
+            <Tab.Navigator
+              screenOptions={({ route }) => ({
+                tabBarIcon: ({ focused, color, size }) => {
+                  let iconName;
+                  iconName = TAB_ICON(focused)[route.name];
+                  //component to return
+                  return <Ionicons name={iconName} size={size} color={color} />;
+                },
+              })}
+              tabBarOptions={{
+                activeTintColor: "tomato",
+                inactiveTintColor: "black",
+              }}
+            >
+              <Tab.Screen
+                name="Restaurents"
+                component={RestaurentsScreen}
+              ></Tab.Screen>
+              <Tab.Screen name="Map" component={Map}></Tab.Screen>
+              <Tab.Screen name="Settings" component={Settings}></Tab.Screen>
+            </Tab.Navigator>
+          </NavigationContainer>
+        </RestaurantsContextProvider>
+      </ThemeProvider>
     </>
   );
 }

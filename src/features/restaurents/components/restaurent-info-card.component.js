@@ -20,7 +20,7 @@ import {
   Address,
 } from "./restaurant-info-card.styles";
 
-export const RestaurentInfoCard = ({ restaurent = {} }) => {
+export const RestaurentInfoCard = ({ restaurant = {} }) => {
   const {
     name = "Some Restaurent",
     icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
@@ -29,9 +29,9 @@ export const RestaurentInfoCard = ({ restaurent = {} }) => {
     ],
     address = "100 street of foodies",
     isOpenNow = true,
-    rating = 4,
+    rating ,
     isClosedTemporarily = true,
-  } = restaurent;
+  } = restaurant;
 
   const ratingArray = Array.from(new Array(Math.floor(rating)));
 
