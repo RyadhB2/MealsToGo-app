@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-  createContext,
-  useMemo,
-  useContext,
-} from "react";
+import React, { useState, useEffect, createContext, useContext } from "react";
 import { LocationContext } from "../../location/location.context";
 import {
   restaurantsRequest,
@@ -29,9 +23,9 @@ export const RestaurantsContextProvider = ({ children }) => {
           setIsLoading(false);
           setRestaurents(results);
         })
-        .catch((error) => {
+        .catch((err) => {
           setIsLoading(false);
-          setError(error);
+          setError(err);
         });
     }, 2000);
   };

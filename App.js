@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, SafeAreaView, StatusBar } from "react-native";
+import { View, Text } from "react-native";
 
 import { RestaurentsScreen } from "./src/features/restaurents/screens/restaurents.screen";
 import { ThemeProvider } from "styled-components";
@@ -78,12 +78,9 @@ export default function App() {
                   inactiveTintColor: "black",
                 }}
               >
-                <Tab.Screen
-                  name="Restaurents"
-                  component={RestaurentsScreen}
-                ></Tab.Screen>
-                <Tab.Screen name="Map" component={Map}></Tab.Screen>
-                <Tab.Screen name="Settings" component={Settings}></Tab.Screen>
+                <Tab.Screen name="Restaurents" component={RestaurentsScreen} />
+                <Tab.Screen name="Map" component={Map} />
+                <Tab.Screen name="Settings" component={Settings} />
               </Tab.Navigator>
             </NavigationContainer>
           </RestaurantsContextProvider>
