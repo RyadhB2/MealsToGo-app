@@ -10,24 +10,14 @@ import { Container } from "../../components/utils/safe-area.component";
 import { Ionicons } from "@expo/vector-icons";
 import { theme } from "../theme";
 
+import { MapScreen } from "../../features/map/screens/map.screen";
+
 const Settings = () => {
   return (
     <ThemeProvider theme={theme}>
       <Container>
         <View>
           <Text>This is the Settings Screen</Text>
-        </View>
-      </Container>
-    </ThemeProvider>
-  );
-};
-
-const Map = () => {
-  return (
-    <ThemeProvider theme={theme}>
-      <Container>
-        <View>
-          <Text>This is the MAP Screen</Text>
         </View>
       </Container>
     </ThemeProvider>
@@ -60,7 +50,7 @@ export const AppNavigator = () => {
         }}
       >
         <Tab.Screen name="Restaurents" component={RestaurantsNavigator} />
-        <Tab.Screen name="Map" component={Map} />
+        <Tab.Screen name="Map" component={MapScreen} />
         <Tab.Screen name="Settings" component={Settings} />
       </Tab.Navigator>
     </NavigationContainer>

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Alert, FlatList, TouchableOpacity } from "react-native";
+import { FlatList, TouchableOpacity } from "react-native";
 import { ActivityIndicator } from "react-native-paper";
 import { RestaurentInfoCard } from "../components/restaurent-info-card.component";
 
