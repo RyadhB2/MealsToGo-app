@@ -35,10 +35,10 @@ export const LocationContextProvider = ({ children }) => {
   }, [keyword]);
 
   return (
-    <LocationContext.Provider
+    <PaymentContext.Provider
       value={{ isLoading, error, location, search: onSearch, keyword }}
     >
       {children}
-    </LocationContext.Provider>
+    </PaymentContext.Provider>
   );
 };

@@ -8,6 +8,7 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
+src/features/restaurents/screens/test.screen.js
 
 # macOS
 .DS_Store
