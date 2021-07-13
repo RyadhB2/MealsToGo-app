@@ -58,7 +58,7 @@ export const MapScreen = ({ navigation }) => {
                   })
                 }
               >
-                <MapCallout restaurant={restaurant} />
+                <MapCallout screen="MapScreen" restaurant={restaurant} />
               </Callout>
             </Marker>
           );

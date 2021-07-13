@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Text,Platform } from "react-native";
+import { Image, Text, Platform } from "react-native";
 import styled from "styled-components";
 import { WebView } from "react-native-webview";
 
@@ -22,8 +22,13 @@ const Item = styled.View`
 `;
 
 const isAndroid = Platform.OS === "android" ? true : false;
-export const CompactRestaurantInfo = ({ restaurant }) => {
-    const CompactImg = isAndroid ? CompactWebview : CompactImage
+export const CompactRestaurantInfo = ({ screen, restaurant }) => {
+  const CompactImg =
+    screen === "RestaurantScreen"
+      ? CompactImage
+      : isAndroid
+      ? CompactWebview
+      : CompactImage;
   return (
     <Item>
       <CompactImg source={{ uri: restaurant.photos[0] }} />
