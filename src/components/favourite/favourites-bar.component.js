@@ -8,7 +8,9 @@ const FavouritesWrapper = styled.View`
 `;
 
 export const FavouritesBar = ({ favourites, screen, onNavigate }) => {
-  if (!favourites.length) return null;
+  if (!favourites.length) {
+    return null;
+  }
   return (
     <FavouritesWrapper>
       <Text>Favourites</Text>

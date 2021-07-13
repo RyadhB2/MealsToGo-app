@@ -1,7 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 
 import MapView, { Marker, Callout } from "react-native-maps";
-import { Container } from "../../../components/utils/safe-area.component";
 import styled from "styled-components";
 
 import { Search } from "../components/search.component";

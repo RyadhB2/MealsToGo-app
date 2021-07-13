@@ -23,8 +23,11 @@ export const RestaurentsScreen = ({ navigation }) => {
       />
       {toggled && (
         <View>
-          
-          <FavouritesBar screen="RestaurantScreen" favourites={favourites} onNavigate={navigation.navigate}/>
+          <FavouritesBar
+            screen="RestaurantScreen"
+            favourites={favourites}
+            onNavigate={navigation.navigate}
+          />
         </View>
       )}
       {isLoading ? (

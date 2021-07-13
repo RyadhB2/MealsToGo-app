@@ -1,7 +1,5 @@
 import React, { createContext, useState } from "react";
 
-
-
 export const FavouritesContext = createContext();
 
 export const FavouritesContextProvider = ({ children }) => {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { RestaurentInfoCard } from "../components/restaurent-info-card.component";
 import { ScrollView } from "react-native";
 import { List } from "react-native-paper";

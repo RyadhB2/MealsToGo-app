@@ -1,4 +1,4 @@
-import React, { useContext, useState ,useEffect} from "react";
+import React, { useContext, useState, useEffect } from "react";
 import styled from "styled-components";
 
 import { Searchbar } from "react-native-paper";

@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { Text } from "react-native";
 import { FavouritesContext } from "../../services/favourites/favourites.context";
 import styled from "styled-components";
 import { AntDesign } from "@expo/vector-icons";
@@ -21,7 +20,11 @@ export const Favourite = ({ restaurant }) => {
   );
   return (
     <FavouriteButton
-      onPress={() => (!isFavourite ? addToFavourites(restaurant) : removeFromFavourites(restaurant))}
+      onPress={() =>
+        !isFavourite
+          ? addToFavourites(restaurant)
+          : removeFromFavourites(restaurant)
+      }
     >
       <AntDesign
         name={isFavourite ? "heart" : "hearto"}
