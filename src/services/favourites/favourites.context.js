@@ -1,4 +1,4 @@
-import React, { createContext, useState,useEffect } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 export const FavouritesContext = createContext();
 
@@ -24,13 +24,13 @@ export const FavouritesContextProvider = ({ children }) => {
       console.log("loading error :", e);
     }
   };
-  useEffect(()=>{
+  useEffect(() => {
     loadFavourites();
-  },[])
+  }, []);
 
-  useEffect(()=>{
+  useEffect(() => {
     saveFavourites(favourites);
-  },[favourites]);
+  }, [favourites]);
 
   const add = (restaurant) => {
     setFavourites([...favourites, restaurant]);

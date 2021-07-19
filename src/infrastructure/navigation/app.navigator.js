@@ -1,5 +1,4 @@
 import React from "react";
-import { NavigationContainer } from "@react-navigation/native";
 import { ThemeProvider } from "styled-components";
 import { View, Text } from "react-native";
 
@@ -34,7 +33,6 @@ const TAB_ICON = (focused) => ({
 
 export const AppNavigator = () => {
   return (
-    <NavigationContainer>
       <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
@@ -53,6 +51,5 @@ export const AppNavigator = () => {
         <Tab.Screen name="Map" component={MapScreen} />
         <Tab.Screen name="Settings" component={Settings} />
       </Tab.Navigator>
-    </NavigationContainer>
   );
 };
