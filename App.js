@@ -14,7 +14,8 @@ import {
 } from "@expo-google-fonts/oswald";
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { AuthenticationContextProvider } from "./src/services/authentication/authentication.context";
-/*
+
+import firebase from "firebase";
 // Initialize Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyAAhn-GP2fCFoesLV8lWrnr83HbVTn6B60",
@@ -26,7 +27,7 @@ const firebaseConfig = {
 };
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
-}*/
+}
 
 export default function App() {
   const [oswaldLoaded] = useOswald({ Oswald_400Regular });
