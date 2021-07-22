@@ -10,12 +10,13 @@ import {
 } from "../components/account.styles";
 import { Title } from "../components/account.styles";
 import { Text } from "../../../components/typography/text.component";
+import { ActivityIndicator, Colors } from "react-native-paper";
 
 export const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { onLogin, error } = useContext(AuthenticationContext);
-
+  const { onLogin, error, isLoading } = useContext(AuthenticationContext);
+  console.log(isLoading);
   return (
     <AccountBackground>
       <AccountCover />
@@ -36,21 +37,27 @@ export const LoginScreen = ({ navigation }) => {
           textContentType="password"
           secureTextEntry
           autoCapitalize="none"
-          secure
           onChangeText={(text) => setPassword(text)}
         />
         {error && (
           <ErrorContainer>
-            <Text style={{textAlign:'center'}} variant="error">{error}</Text>
+            <Text style={{ textAlign: "center" }} variant="error">
+              {error}
+            </Text>
           </ErrorContainer>
         )}
-        <AuthButton
-          icon="lock-open-outline"
-          mode="contained"
-          onPress={() => onLogin(email, password)}
-        >
-          Login
-        </AuthButton>
+
+        {!isLoading ? (
+          <AuthButton
+            icon="lock-open-outline"
+            mode="contained"
+            onPress={() => onLogin(email, password)}
+          >
+            Login
+          </AuthButton>
+        ) : (
+          <ActivityIndicator animating={true} color={Colors.blue300} />
+        )}
       </AccountContainer>
 
       <AuthButton mode="contained" onPress={() => navigation.goBack()}>

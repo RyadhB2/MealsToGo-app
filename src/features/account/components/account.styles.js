@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import { Button } from "react-native-paper";
 import { colors } from "../../../infrastructure/theme/colors";
@@ -43,6 +42,6 @@ export const Title = styled(Text)`
 
 export const ErrorContainer = styled.View`
   max-width: 300px;
-  
-  text-align:center;
+
+  text-align: center;
 `;
