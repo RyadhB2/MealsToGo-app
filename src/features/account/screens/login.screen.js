@@ -16,7 +16,7 @@ export const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { onLogin, error, isLoading } = useContext(AuthenticationContext);
-  console.log(isLoading);
+  //console.log(isLoading);
   return (
     <AccountBackground>
       <AccountCover />
