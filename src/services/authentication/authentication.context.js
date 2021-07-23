@@ -49,7 +49,7 @@ export const AuthenticationContextProvider = ({ children }) => {
       .then((usr) => {
         setUser(usr);
         setIsLoading(false);
-        console.log("Conntected ");
+        //console.log("Conntected ");
       })
       .catch((e) => {
         setIsLoading(false);

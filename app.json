@@ -4,11 +4,11 @@
     "slug": "MealsToGo",
     "version": "0.0.1",
     "orientation": "portrait",
-    "icon": "./assets/fast-food.png",
+    "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/fast-food.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#000000"
+      "backgroundColor": "#FFF"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -21,12 +21,9 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#FFFFFF"
       }
-    },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    }
+    } 
   }
 }

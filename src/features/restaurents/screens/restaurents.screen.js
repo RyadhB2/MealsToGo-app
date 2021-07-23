@@ -9,7 +9,7 @@ import { CenterView } from "../../../components/utils/center-view.component";
 import { Search } from "../components/searchbar.component";
 import { FavouritesContext } from "../../../services/favourites/favourites.context";
 import { FavouritesBar } from "../../../components/favourite/favourites-bar.component";
-
+import { FadeInView } from "../../../components/animations/fade.animation";
 export const RestaurentsScreen = ({ navigation }) => {
   const { restaurants, isLoading } = useContext(RestaurantsContext);
   const { favourites } = useContext(FavouritesContext);
@@ -44,7 +44,9 @@ export const RestaurentsScreen = ({ navigation }) => {
                   navigation.navigate("RestaurantDetail", { restaurant: item })
                 }
               >
-                <RestaurentInfoCard restaurant={item} />
+                <FadeInView>
+                  <RestaurentInfoCard restaurant={item} />
+                </FadeInView>
               </TouchableOpacity>
             );
           }}
